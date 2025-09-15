@@ -4,11 +4,11 @@ require "../Includes/user-class.php";
 try {
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $user = new User();
-        $name = htmlspecialchars($_POST["name"]);
+        $name = htmlspecialchars($_POST["username"]);
         $email = htmlspecialchars($_POST["email"]);
         $password = htmlspecialchars($_POST["password"]);
 
-        user->register ($name, $email, $password);
+        $user->register ($name, $email, $password);
         echo "Registratie gelukt!";
         header ("refresh:2;url=../index.php");
 }
